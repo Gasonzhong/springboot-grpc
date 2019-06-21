@@ -1,0 +1,24 @@
+syntax = "proto3";
+option java_package = "com.gason.grpc.api";
+option java_outer_classname = "GasonRPCService";
+option java_multiple_files = true;
+
+package com.gason.grpc.api;
+
+service GasonMessage {
+    rpc onmessage (GasonRequest) returns (GasonResponse) {}
+}
+message Header{
+    string auth=1;
+}
+message Body{
+    string data=1;
+}
+message GasonRequest {
+    Header header = 1;
+    Body body=2;
+}
+message GasonResponse {
+    Header header = 1;
+    Body body=2;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "com.gason.grpc.api";
+option java_outer_classname = "RPCDateServiceApi";
+option java_multiple_files = true;
+
+package com.gason.grpc.api;
+
+service RPCDateService {
+  rpc getDate (RPCDateRequest) returns (RPCDateResponse) {}
+}
+message RPCDateRequest {
+  string userName = 1;
+}
+message RPCDateResponse {
+  string serverDate = 1;
+}
